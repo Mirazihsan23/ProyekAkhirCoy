@@ -1,0 +1,11 @@
+<resources>
+    <string name="app_name">Locomoto Mobile</string>
+    <string name="title_activity_maps">Locomoto</string>
+    <string name="hint_kode">PIN</string>
+    <string name="hint_serial">Serial</string>
+    <string name="text_expand">Menu</string>
+    <string name="logout">Logout</string>
+    <string name="control">Controlling Motor</string>
+    <string name="notification_theft_title">S.O.S</string>
+
+</resources>
