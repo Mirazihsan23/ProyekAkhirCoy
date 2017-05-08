@@ -40,49 +40,8 @@
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginTop="10dp"
             android:background="#ffffff"
             android:orientation="vertical">
-
-            <RelativeLayout
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content">
-
-                <TextView
-                    android:id="@+id/serial"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:layout_centerHorizontal="true"
-                    android:layout_marginTop="10dp"
-                    android:paddingBottom="5dp"
-                    android:paddingLeft="10dp"
-                    android:paddingRight="5dp"
-                    android:text="Serial"
-                    android:textColor="#000000"
-                    android:textSize="20dp" />
-
-                <TextView
-                    android:id="@+id/serial2"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:layout_below="@id/serial"
-                    android:layout_centerHorizontal="true"
-                    android:layout_marginTop="2dp"
-                    android:paddingBottom="5dp"
-                    android:paddingLeft="10dp"
-                    android:paddingRight="5dp"
-                    android:text="23A2ING"
-                    android:textColor="#c5d92d"
-                    android:textSize="20dp" />
-            </RelativeLayout>
-
-            <View
-                android:id="@+id/divider3"
-                android:layout_width="match_parent"
-                android:layout_height="1dp"
-                android:layout_below="@id/serial2"
-                android:layout_marginTop="10dp"
-                android:background="#ccc" />
 
             <RelativeLayout
                 android:layout_width="wrap_content"
@@ -181,11 +140,11 @@
             </RelativeLayout>
 
             <Button
-                android:id="@+id/buttonupdate"
+                android:id="@+id/updateProfile"
                 android:layout_width="300dp"
                 android:layout_height="wrap_content"
                 android:layout_marginBottom="24dp"
-                android:layout_marginTop="34dp"
+                android:layout_marginTop="10dp"
                 android:layout_gravity="center"
                 android:background="#c5d92d"
                 android:elevation="24dp"
@@ -197,13 +156,11 @@
                 android:id="@+id/changepin"
                 android:layout_width="300dp"
                 android:layout_height="wrap_content"
-                android:layout_marginBottom="24dp"
-                android:layout_marginTop="10dp"
                 android:layout_gravity="center"
                 android:background="#c5d92d"
                 android:elevation="24dp"
                 android:padding="10dp"
-                android:text="Change Profile"
+                android:text="Change PIN"
                 android:textColor="#666666" />
 
         </LinearLayout>

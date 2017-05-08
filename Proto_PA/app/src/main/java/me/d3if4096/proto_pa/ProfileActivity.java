@@ -42,7 +42,7 @@ public class ProfileActivity extends Activity {
         plat = (EditText) findViewById(R.id.plat);
         no_hp = (EditText) findViewById(R.id.no_hp);
 
-        buttonchange = (Button) findViewById(R.id.changepin);
+        buttonchange = (Button) findViewById(R.id.updateProfile);
         buttonchange.setOnClickListener(new View.OnClickListener() {
 
             @Override
