@@ -2,4 +2,60 @@
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent" android:layout_height="match_parent">
 
+    <include
+        layout="@layout/toolbar"
+        android:id="@+id/include"/>
+
+    <LinearLayout
+        android:layout_below="@id/include"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical">
+
+        <EditText
+            android:id="@+id/pin"
+            android:hint="PIN"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="20dp"
+            android:paddingBottom="5dp"
+            android:paddingLeft="10dp"
+            android:paddingRight="5dp"
+            android:textColor="#c5d92d"
+            android:textSize="20dp"
+            android:inputType="number"
+            android:maxLength="6"/>
+
+        <EditText
+            android:id="@+id/new_pin"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="NEW PIN"
+            android:layout_centerHorizontal="true"
+            android:layout_below="@id/pin"
+            android:layout_marginTop="20dp"
+            android:paddingBottom="5dp"
+            android:paddingLeft="10dp"
+            android:paddingRight="5dp"
+            android:textColor="#c5d92d"
+            android:textSize="20dp"
+            android:inputType="number"
+            android:maxLength="6"
+            />
+
+        <Button
+            android:id="@+id/buttonupdate"
+            android:layout_width="300dp"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="24dp"
+            android:layout_gravity="center"
+            android:layout_below="@id/new_pin"
+            android:layout_marginTop="10dp"
+            android:background="#c5d92d"
+            android:elevation="24dp"
+            android:padding="10dp"
+            android:text="Update PIN"
+            android:textColor="#666666" />
+    </LinearLayout>
 </RelativeLayout>

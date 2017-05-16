@@ -63,6 +63,7 @@
         <activity android:name=".ProfileActivity"
             android:theme="@style/AppTheme"/>
         <activity android:name=".ActionActivity"/>
+        <activity android:name=".ChangePin"/>
 
         <service
             android:name=".push.notification.MyFirebaseMessagingService">

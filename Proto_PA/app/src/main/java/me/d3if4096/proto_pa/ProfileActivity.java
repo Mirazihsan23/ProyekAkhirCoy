@@ -23,6 +23,7 @@ import retrofit2.Response;
 public class ProfileActivity extends Activity {
 
     private Button buttonchange;
+    private Button buttonchangepin;
     private ApiClient apiClient;
     private EditText nama, plat, no_hp;
     private ProfileCallBack profileCallBack;
@@ -44,10 +45,8 @@ public class ProfileActivity extends Activity {
 
         buttonchange = (Button) findViewById(R.id.updateProfile);
         buttonchange.setOnClickListener(new View.OnClickListener() {
-
             @Override
             public void onClick(View v) {
-
                 apiClient.changeProfile(
                         nama.getText().toString(),
                         plat.getText().toString(),
@@ -55,8 +54,16 @@ public class ProfileActivity extends Activity {
                         .enqueue(updateProfileCallBack);
             }
         });
-
         apiClient.getProfile().enqueue(profileCallBack);
+
+        buttonchangepin = (Button) findViewById(R.id.changepin);
+        buttonchangepin.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(ProfileActivity.this, ChangePin.class);
+                startActivity(intent);
+            }
+        });
     }
 
     private class ProfileCallBack implements Callback<ApiResponse<ProfileResponse>> {

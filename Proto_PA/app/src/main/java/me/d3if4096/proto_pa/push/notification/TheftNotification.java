@@ -10,6 +10,7 @@ import com.google.gson.Gson;
 import java.util.Map;
 
 import me.d3if4096.proto_pa.R;
+import me.d3if4096.proto_pa.SettingPref;
 
 /**
  * Created by Miraz Nur Ihsan on 03/05/2017.
@@ -38,6 +39,7 @@ public class TheftNotification {
             mBuilder.setContentTitle(context.getString(R.string.notification_theft_title));
             mBuilder.setDefaults(Notification.DEFAULT_ALL);
             mBuilder.setAutoCancel(false);
+            new SettingPref(context).turnRelayDanger();
         }
         public Builder setPayload(Map<String, String> payload){
             Payload pload = new Gson().fromJson(new Gson().toJson(payload), Payload.class);

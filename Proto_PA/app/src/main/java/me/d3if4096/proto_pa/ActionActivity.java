@@ -33,7 +33,9 @@ public class ActionActivity extends Activity implements View.OnClickListener, Co
     private Switch switchOnOf;
     private ApiClient apiClient;
     private UpdateRelayCallback updateRelayCallback;
+    private TurnOffDangeryCallback turnOffDangeryCallback;
     private Toolbar supportActionBar;
+    private SettingPref settingPref;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -48,6 +50,7 @@ public class ActionActivity extends Activity implements View.OnClickListener, Co
         apiClient = ApiService.create(new AccountPref(this));
         apiClient.relayStatus().enqueue(new GetRelayStatusCallback());
         updateRelayCallback = new UpdateRelayCallback();
+        turnOffDangeryCallback = new TurnOffDangeryCallback();
 
         switchOnOf.setOnClickListener(this);
         switchOnOf.setOnCheckedChangeListener(this);
@@ -55,10 +58,25 @@ public class ActionActivity extends Activity implements View.OnClickListener, Co
     }
 
     @Override
+    protected void onResume() {
+        super.onResume();
+        settingPref = new SettingPref(this);
+        if(settingPref.getRelayMode() == SettingPref.RELAY_DANGER){
+            findViewById(R.id.layoutbahaya).setVisibility(View.VISIBLE);
+            findViewById(R.id.buttonbahaya).setOnClickListener(this);
+        }else{
+            findViewById(R.id.layoutbahaya).setVisibility(View.GONE);
+            findViewById(R.id.buttonbahaya).setOnClickListener(null);
+        }
+    }
+
+    @Override
     public void onClick(View view) {
         if(view.getId() == R.id.switch_on_of){
             int status = switchOnOf.isChecked() ? 1 : 0;
             apiClient.updateRelay(status).enqueue(updateRelayCallback);
+        }else if(view.getId() == R.id.buttonbahaya){
+            apiClient.turnOffDanger().enqueue(turnOffDangeryCallback);
         }
     }
 
@@ -71,6 +89,12 @@ public class ActionActivity extends Activity implements View.OnClickListener, Co
     public void onCheckedChanged(CompoundButton compoundButton, boolean b) {
         if(compoundButton.getId() == R.id.switch_on_of){
             switchOnOf.setText(switchOnOf.isChecked() ? "ON" : "OFF");
+            if(settingPref.getRelayMode() != SettingPref.RELAY_DANGER){
+                if(switchOnOf.isChecked())
+                    settingPref.turnOnRelay();
+                else
+                    settingPref.turnOffRelay();
+            }
         }
     }
 
@@ -108,6 +132,29 @@ public class ActionActivity extends Activity implements View.OnClickListener, Co
         public void onFailure(Call<ApiResponse<RelayStatusResponse>> call, Throwable t) {
             switchOnOf.setChecked(!switchOnOf.isChecked());
             Toast.makeText(ActionActivity.this, "Tidak dapat mendapatkan status relay", Toast.LENGTH_SHORT).show();
+        }
+    }
+
+    private class TurnOffDangeryCallback implements  Callback<ApiResponse<RelayStatusResponse>>{
+
+        @Override
+        public void onResponse(Call<ApiResponse<RelayStatusResponse>> call, Response<ApiResponse<RelayStatusResponse>> response) {
+            if(response.isSuccessful() && response.body().isSuccess()){
+                findViewById(R.id.layoutbahaya).setVisibility(View.GONE);
+                switchOnOf.setChecked(response.body().getData().getStatus() == 1);
+                switchOnOf.setEnabled(true);
+                if(switchOnOf.isChecked())
+                    settingPref.turnOnRelay();
+                else
+                    settingPref.turnOffRelay();
+            }else{
+                Toast.makeText(ActionActivity.this, "Tidak dapat mematikan tanda bahaya", Toast.LENGTH_SHORT).show();
+            }
+        }
+
+        @Override
+        public void onFailure(Call<ApiResponse<RelayStatusResponse>> call, Throwable t) {
+            Toast.makeText(ActionActivity.this, "Tidak dapat mematikan tanda bahaya", Toast.LENGTH_SHORT).show();
         }
     }
 }

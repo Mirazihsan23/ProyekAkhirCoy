@@ -1,6 +1,7 @@
 package me.d3if4096.proto_pa;
 
 import android.content.Intent;
+import android.graphics.Color;
 import android.net.Uri;
 import android.support.v4.app.FragmentActivity;
 import android.os.Bundle;
@@ -21,6 +22,11 @@ import com.google.android.gms.maps.model.BitmapDescriptor;
 import com.google.android.gms.maps.model.BitmapDescriptorFactory;
 import com.google.android.gms.maps.model.LatLng;
 import com.google.android.gms.maps.model.MarkerOptions;
+import com.google.android.gms.maps.model.PolygonOptions;
+import com.google.android.gms.maps.model.PolylineOptions;
+
+import java.util.ArrayList;
+import java.util.List;
 
 import me.d3if4096.proto_pa.api.ApiClient;
 import me.d3if4096.proto_pa.api.ApiService;
@@ -37,16 +43,20 @@ public class MapsActivity extends AppCompatActivity implements OnMapReadyCallbac
     private Thread threadLocation;
     private AccountPref accountPref;
     private DeviceLocationCallback deviceLocationCallback;
+    private DangerLocationCallback dangerLocationCallback;
     private LogoutCallback logoutCallback;
     private final String TAG = "serial location request";
+    private SettingPref settingPref;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_maps);
 
+        settingPref = new SettingPref(this);
         apiClient = ApiService.create(new AccountPref(MapsActivity.this));
         deviceLocationCallback = new DeviceLocationCallback();
+        dangerLocationCallback = new DangerLocationCallback();
         logoutCallback = new LogoutCallback();
         accountPref = new AccountPref(this);
         ImageButton btn1 = (ImageButton) findViewById(R.id.profileBtn);
@@ -74,6 +84,8 @@ public class MapsActivity extends AppCompatActivity implements OnMapReadyCallbac
     @Override
     protected void onResume() {
         super.onResume();
+        if(mMap != null)
+            mMap.clear();
         getLocation();
     }
 
@@ -131,8 +143,12 @@ public class MapsActivity extends AppCompatActivity implements OnMapReadyCallbac
                     while(true){
                         try {
                             String serial = accountPref.getSerial();
-                            if (!TextUtils.isEmpty(serial))
-                                apiClient.deviceLocation(serial).enqueue(deviceLocationCallback);
+                            if (!TextUtils.isEmpty(serial)) {
+                                if(settingPref.getRelayMode() == SettingPref.RELAY_DANGER)
+                                    apiClient.dangerRoute(serial).enqueue(dangerLocationCallback);
+                                else
+                                    apiClient.deviceLocation(serial).enqueue(deviceLocationCallback);
+                            }
                             Thread.sleep(5000);
                         } catch (InterruptedException e) {
                             e.printStackTrace();
@@ -152,6 +168,15 @@ public class MapsActivity extends AppCompatActivity implements OnMapReadyCallbac
         mMap.moveCamera(CameraUpdateFactory.newLatLngZoom(latLng,15));
     }
 
+    private void drawRoute(List<LatLng> latLngs){
+        mMap.clear();
+        mMap.addPolyline(new PolylineOptions().addAll(latLngs).color(Color.RED));
+        LatLng latLng = latLngs.get(0);
+        BitmapDescriptor icon = BitmapDescriptorFactory.fromResource(R.drawable.locomoto);
+        mMap.addMarker(new MarkerOptions().position(latLng).title("Motor anda disini!").icon(icon));
+        mMap.moveCamera(CameraUpdateFactory.newLatLngZoom(latLng,15));
+    }
+
     private class DeviceLocationCallback implements Callback<ApiResponse<DeviceLocationResponse>>{
 
         @Override
@@ -164,6 +189,25 @@ public class MapsActivity extends AppCompatActivity implements OnMapReadyCallbac
 
         @Override
         public void onFailure(Call<ApiResponse<DeviceLocationResponse>> call, Throwable t) {
+
+        }
+    }
+
+    private class DangerLocationCallback implements Callback<ApiResponse<List<DeviceLocationResponse>>>{
+
+        @Override
+        public void onResponse(Call<ApiResponse<List<DeviceLocationResponse>>> call, Response<ApiResponse<List<DeviceLocationResponse>>> response) {
+            if (response.isSuccessful()&&response.body().isSuccess() && response.body().getData().size() > 0){
+                List<LatLng> latLngs = new ArrayList<>();
+                List<DeviceLocationResponse> routes = response.body().getData();
+                for (DeviceLocationResponse d : routes)
+                    latLngs.add(new LatLng(d.getLat(), d.getLng()));
+                drawRoute(latLngs);
+            }
+        }
+
+        @Override
+        public void onFailure(Call<ApiResponse<List<DeviceLocationResponse>>> call, Throwable t) {
 
         }
     }

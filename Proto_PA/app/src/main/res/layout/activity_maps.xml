@@ -79,7 +79,6 @@
                 </RelativeLayout>
             </LinearLayout>
         </android.support.v7.widget.Toolbar>
-
     </android.support.design.widget.AppBarLayout>
 
     <fragment
@@ -88,18 +87,5 @@
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         tools:layout="@layout/activity_maps" />
-
-    <android.support.design.widget.FloatingActionButton
-        android:layout_height="50dp"
-        android:layout_width="50dp"
-        android:layout_marginBottom="60dp"
-        android:layout_marginRight="25dp"
-        android:layout_gravity="bottom|end"
-        android:src="@drawable/ic_my_location_black_24dp"
-        android:elevation="6dp"
-        android:id="@+id/fab_profile"
-        app:pressedTranslationZ="12dp"
-        app:backgroundTint="@color/colorPrimary"
-        android:visibility="visible"/>
 
 </android.support.design.widget.CoordinatorLayout>
