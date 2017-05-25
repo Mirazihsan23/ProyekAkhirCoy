@@ -1,0 +1,28 @@
+<resources>
+    <string name="app_name">Locomoto Mobile</string>
+    <string name="title_activity_maps">Locomoto</string>
+    <string name="hint_kode">PIN</string>
+    <string name="hint_serial">Serial Device</string>
+    <string name="text_expand">Menu</string>
+    <string name="logout">Logout</string>
+    <string name="control">Controlling Motor</string>
+    <string name="notification_theft_title">S.O.S</string>
+    <string name="status_off">Your status motorcycle is off</string>
+    <string name="status_off2">Your motorcycle is safe</string>
+    <string name="status_on">Your status motorcycle is on</string>
+    <string name="status_on2">Your motorcyle is unsafe. Please turn off your motorcycle!</string>
+    <string name="miraz">Miraz Nur Ihsan</string>
+    <string name="mirazemail">miraznurihsan27@gmail.com</string>
+    <string name="adi">Raden Adi Koesoemah</string>
+    <string name="adiemail">adikoesoemah@gmail.com</string>
+    <string name="rahmadi">Rahmadi Wijaya, S.Si., M.T.</string>
+    <string name="entik">Entik Insanudin, S.T., M.T.</string>
+    <string name="dosmpem1">Dosen Pembimbing 1</string>
+    <string name="dosmpem2">Dosen Pembimbing 2</string>
+    <string name="sari">Widia Permata Sari</string>
+    <string name="sariemail">widiapsr1504@gmail.com</string>
+    <string name="about">About</string>
+    <string name="copyright">Copyright © 2016 Prodi D3 Teknik Informatika</string>
+    <string name="fakultas">Fakultas Ilmu Terapan – Universitas Telkom</string>
+    <string name="tentang">Locomoto application is useful for motorcycle monitoring. User can monitoring motorcycles location and user also can turn off motorcycle engine when the motorcycle is in danger</string>
+</resources>

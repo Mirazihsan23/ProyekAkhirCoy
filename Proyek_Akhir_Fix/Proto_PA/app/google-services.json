@@ -1,0 +1,55 @@
+{
+  "project_info": {
+    "project_number": "311899844526",
+    "firebase_url": "https://rainy-bae9d.firebaseio.com",
+    "project_id": "rainy-bae9d",
+    "storage_bucket": "rainy-bae9d.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:311899844526:android:93d4892957b2d319",
+        "android_client_info": {
+          "package_name": "me.d3if4096.proto_pa"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "311899844526-tiplcn5ktvvjbkojtq9gtlrjir0fkls9.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "me.d3if4096.proto_pa",
+            "certificate_hash": "24d14c28544f941fc8af003a7d7623bc48ebf3e7"
+          }
+        },
+        {
+          "client_id": "311899844526-ira6pbjqf9494m23maon3vm70v6hrlj8.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBz4-qc8ucNZajf_jsH4tBiUKjmi3iL_qg"
+        }
+      ],
+      "services": {
+        "analytics_service": {
+          "status": 1
+        },
+        "appinvite_service": {
+          "status": 2,
+          "other_platform_oauth_client": [
+            {
+              "client_id": "311899844526-ira6pbjqf9494m23maon3vm70v6hrlj8.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        },
+        "ads_service": {
+          "status": 2
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
