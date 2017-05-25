@@ -1,6 +1,7 @@
 package me.d3if4096.proto_pa;
 
 import android.app.Activity;
+import android.content.Intent;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.view.View;
@@ -48,6 +49,7 @@ public class ChangePin extends AppCompatActivity {
                         pin.getText().toString(),
                         new_pin.getText().toString())
                         .enqueue(ChangePinCallback);
+
             }
         });
     }
@@ -61,6 +63,9 @@ public class ChangePin extends AppCompatActivity {
                 new_pin.getText().toString();
 
                 Toast.makeText(ChangePin.this,"Pin Successfully update", Toast.LENGTH_SHORT).show();
+
+                Intent intent = new Intent(ChangePin.this, ProfileActivity.class);
+                startActivity(intent);
             }else{
                 Toast.makeText(ChangePin.this,"Pin Failed update", Toast.LENGTH_SHORT).show();
             }

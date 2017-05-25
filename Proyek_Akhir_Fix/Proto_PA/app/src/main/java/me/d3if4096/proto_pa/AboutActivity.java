@@ -16,7 +16,7 @@ import android.widget.Toast;
 
 public class AboutActivity extends AppCompatActivity {
     static final int REQUEST_SELECT_CONTACT = 1;
-    private ImageView emailmiraz, fbmiraz, emailadi, emailsari, fbsari, fbadi;
+    private ImageView emailmiraz, fbmiraz, emailadi, emailsari, emailparahmadi, emailpaentik, fbsari, fbadi;
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -25,6 +25,8 @@ public class AboutActivity extends AppCompatActivity {
         emailmiraz = (ImageView) findViewById(R.id.emailmiraz);
         emailadi = (ImageView) findViewById(R.id.emailadi);
         emailsari = (ImageView) findViewById(R.id.emailsari);
+        emailparahmadi = (ImageView) findViewById(R.id.emailparahmadi);
+        emailpaentik = (ImageView) findViewById(R.id.emailpaentik);
         fbmiraz = (ImageView) findViewById(R.id.fbmiraz);
         fbadi = (ImageView) findViewById(R.id.fbadi);
         fbsari = (ImageView) findViewById(R.id.fbsari);
@@ -97,6 +99,37 @@ public class AboutActivity extends AppCompatActivity {
                 Intent i = new Intent(Intent.ACTION_SEND);
                 i.setType("message/rfc822");
                 i.putExtra(Intent.EXTRA_EMAIL  , new String[]{"widiapsr1504@gmail.com"});
+                i.putExtra(Intent.EXTRA_SUBJECT, "");
+                i.putExtra(Intent.EXTRA_TEXT   , "");
+                try {
+                    startActivity(Intent.createChooser(i, "Send mail..."));
+                } catch (android.content.ActivityNotFoundException ex) {
+                    Toast.makeText(AboutActivity.this, "There are no email clients installed.", Toast.LENGTH_SHORT).show();
+                }
+            }
+        });
+        emailparahmadi.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent i = new Intent(Intent.ACTION_SEND);
+                i.setType("message/rfc822");
+                i.putExtra(Intent.EXTRA_EMAIL  , new String[]{"rahmadiwijaya@tass.telkomuniversity.ac.id"});
+                i.putExtra(Intent.EXTRA_SUBJECT, "");
+                i.putExtra(Intent.EXTRA_TEXT   , "");
+                try {
+                    startActivity(Intent.createChooser(i, "Send mail..."));
+                } catch (android.content.ActivityNotFoundException ex) {
+                    Toast.makeText(AboutActivity.this, "There are no email clients installed.", Toast.LENGTH_SHORT).show();
+                }
+            }
+        });
+
+        emailpaentik.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent i = new Intent(Intent.ACTION_SEND);
+                i.setType("message/rfc822");
+                i.putExtra(Intent.EXTRA_EMAIL  , new String[]{"miraznurihsan22@gmail.com"});
                 i.putExtra(Intent.EXTRA_SUBJECT, "");
                 i.putExtra(Intent.EXTRA_TEXT   , "");
                 try {

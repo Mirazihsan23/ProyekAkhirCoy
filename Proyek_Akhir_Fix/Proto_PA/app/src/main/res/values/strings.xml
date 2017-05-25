@@ -8,9 +8,9 @@
     <string name="control">Controlling Motor</string>
     <string name="notification_theft_title">S.O.S</string>
     <string name="status_off">Your status motorcycle is off</string>
-    <string name="status_off2">Your motorcycle is safe</string>
+    <string name="status_off2">Your motorcycle is off, be careful!</string>
     <string name="status_on">Your status motorcycle is on</string>
-    <string name="status_on2">Your motorcyle is unsafe. Please turn off your motorcycle!</string>
+    <string name="status_on2">Do not forget to turn off when the motorcycle is not in use!</string>
     <string name="miraz">Miraz Nur Ihsan</string>
     <string name="mirazemail">miraznurihsan27@gmail.com</string>
     <string name="adi">Raden Adi Koesoemah</string>

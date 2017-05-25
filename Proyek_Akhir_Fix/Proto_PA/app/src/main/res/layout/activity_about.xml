@@ -124,14 +124,14 @@
                 <ImageButton
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:src="@drawable/enve"
+                    android:src="@drawable/emailicon"
                     android:background="#ffffff"
                     android:layout_marginRight="@dimen/activity_vertical_margin"
                     android:id="@+id/emailmiraz"/>
                 <ImageButton
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:src="@drawable/facebook"
+                    android:src="@drawable/facbookiconah"
                     android:layout_marginLeft="@dimen/activity_vertical_margin"
                     android:background="#ffffff"
                     android:id="@+id/fbmiraz"/>
@@ -185,14 +185,14 @@
                 <ImageButton
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:src="@drawable/enve"
+                    android:src="@drawable/emailicon"
                     android:background="#ffffff"
                     android:layout_marginRight="@dimen/activity_vertical_margin"
                     android:id="@+id/emailadi"/>
                 <ImageButton
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:src="@drawable/facebook"
+                    android:src="@drawable/facbookiconah"
                     android:layout_marginLeft="@dimen/activity_vertical_margin"
                     android:background="#ffffff"
                     android:id="@+id/fbadi"/>
@@ -227,7 +227,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_gravity="bottom"
-                android:src="@drawable/sari2"
+                android:src="@drawable/sarifix"
 
                 android:layout_below="@+id/linearLayout"
                 android:layout_centerHorizontal="true"
@@ -254,17 +254,19 @@
                 android:orientation="horizontal"
                 android:paddingTop="5dp"
                 android:gravity="center">
+
                 <ImageButton
+                    android:id="@+id/emailsari"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:src="@drawable/enve"
-                    android:background="#ffffff"
                     android:layout_marginRight="@dimen/activity_vertical_margin"
-                    android:id="@+id/emailsari"/>
+                    android:background="#ffffff"
+                    android:src="@drawable/emailicon" />
+
                 <ImageButton
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:src="@drawable/facebook"
+                    android:src="@drawable/facbookiconah"
                     android:layout_marginLeft="@dimen/activity_vertical_margin"
                     android:background="#ffffff"
                     android:id="@+id/fbsari"/>
@@ -358,12 +360,16 @@
                     android:orientation="horizontal"
                     android:paddingTop="5dp"
                     android:gravity="center">
+
                     <ImageButton
+                        android:id="@+id/emailparahmadi"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:src="@drawable/enve"
+                        android:src="@drawable/emailicon"
                         android:background="#ffffff"
-                        android:layout_marginRight="@dimen/activity_vertical_margin"/>
+                        android:layout_marginRight="@dimen/activity_vertical_margin"
+
+                        />
                 </LinearLayout>
             </LinearLayout>
 
@@ -415,9 +421,10 @@
                     android:paddingTop="5dp"
                     android:gravity="center">
                     <ImageButton
+                        android:id="@+id/emailpaentik"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:src="@drawable/enve"
+                        android:src="@drawable/emailicon"
                         android:background="#ffffff"
                         android:layout_marginRight="@dimen/activity_vertical_margin"/>
 
