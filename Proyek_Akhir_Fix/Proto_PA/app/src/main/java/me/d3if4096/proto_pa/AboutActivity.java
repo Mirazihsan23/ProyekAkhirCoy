@@ -129,7 +129,7 @@ public class AboutActivity extends AppCompatActivity {
             public void onClick(View view) {
                 Intent i = new Intent(Intent.ACTION_SEND);
                 i.setType("message/rfc822");
-                i.putExtra(Intent.EXTRA_EMAIL  , new String[]{"miraznurihsan22@gmail.com"});
+                i.putExtra(Intent.EXTRA_EMAIL  , new String[]{"insanudin@telkomuniversity.ac.id"});
                 i.putExtra(Intent.EXTRA_SUBJECT, "");
                 i.putExtra(Intent.EXTRA_TEXT   , "");
                 try {

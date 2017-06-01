@@ -63,9 +63,6 @@ public class ChangePin extends AppCompatActivity {
                 new_pin.getText().toString();
 
                 Toast.makeText(ChangePin.this,"Pin Successfully update", Toast.LENGTH_SHORT).show();
-
-                Intent intent = new Intent(ChangePin.this, ProfileActivity.class);
-                startActivity(intent);
             }else{
                 Toast.makeText(ChangePin.this,"Pin Failed update", Toast.LENGTH_SHORT).show();
             }
