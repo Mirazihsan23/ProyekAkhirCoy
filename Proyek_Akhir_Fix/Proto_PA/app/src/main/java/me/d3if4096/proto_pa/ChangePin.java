@@ -33,6 +33,7 @@ public class ChangePin extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_change);
         getSupportActionBar().setTitle("Locomoto Mobile");
+
         apiClient = ApiService.create(new AccountPref(ChangePin.this));
         ChangePinCallback = new ChangePinCallback();
 
@@ -49,7 +50,6 @@ public class ChangePin extends AppCompatActivity {
                         pin.getText().toString(),
                         new_pin.getText().toString())
                         .enqueue(ChangePinCallback);
-
             }
         });
     }
@@ -61,7 +61,8 @@ public class ChangePin extends AppCompatActivity {
             if (response.isSuccessful()&& response.body().isSuccess()){
                 pin.getText().toString();
                 new_pin.getText().toString();
-
+                pin.getText().clear();
+                new_pin.getText().clear();
                 Toast.makeText(ChangePin.this,"Pin Successfully update", Toast.LENGTH_SHORT).show();
             }else{
                 Toast.makeText(ChangePin.this,"Pin Failed update", Toast.LENGTH_SHORT).show();

@@ -14,10 +14,10 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:gravity="center"
-            android:paddingTop="@dimen/activity_vertical_margin"
-            android:paddingLeft="@dimen/activity_vertical_margin"
-            android:paddingRight="@dimen/activity_vertical_margin"
-            android:paddingBottom="@dimen/activity_horizontal_margin"
+            android:paddingTop="15dp"
+            android:paddingLeft="15dp"
+            android:paddingRight="15dp"
+            android:paddingBottom="15dp"
             android:layout_alignParentTop="true"
             android:layout_alignParentLeft="true"
             android:layout_alignParentStart="true"
@@ -33,7 +33,7 @@
                 android:textSize="20dp"
                 android:layout_gravity="center"
                 android:gravity="center"
-                android:paddingBottom="@dimen/activity_vertical_margin"
+                android:paddingBottom="20dp"
 
                 />
             <TextView
@@ -56,7 +56,7 @@
             android:layout_alignParentLeft="true"
             android:layout_alignParentStart="true"
             android:layout_centerInParent="true"
-            android:paddingTop="@dimen/activity_vertical_margin"
+            android:paddingTop="20dp"
             android:layout_marginBottom="20dp"
             android:layout_below="@+id/layout1"
             android:orientation="vertical">
@@ -84,12 +84,12 @@
             android:layout_width="0dp"
             android:layout_weight="1"
             android:layout_height="wrap_content"
-            android:paddingBottom="@dimen/activity_vertical_margin"
-            android:paddingLeft="@dimen/activity_horizontal_margin"
-            android:paddingRight="@dimen/activity_horizontal_margin"
-            android:paddingTop="@dimen/activity_vertical_margin"
-            android:layout_marginLeft="@dimen/activity_vertical_margin"
-            android:layout_marginRight="@dimen/activity_vertical_margin"
+            android:paddingBottom="15dp"
+            android:paddingLeft="15dp"
+            android:paddingRight="15dp"
+            android:paddingTop="15dp"
+            android:layout_marginLeft="15dp"
+            android:layout_marginRight="15dp"
             android:orientation="vertical"
             android:gravity="center">
             <ImageView
@@ -126,13 +126,13 @@
                     android:layout_height="wrap_content"
                     android:src="@drawable/emailicon"
                     android:background="#ffffff"
-                    android:layout_marginRight="@dimen/activity_vertical_margin"
+                    android:layout_marginRight="15dp"
                     android:id="@+id/emailmiraz"/>
                 <ImageButton
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:src="@drawable/facbookiconah"
-                    android:layout_marginLeft="@dimen/activity_vertical_margin"
+                    android:layout_marginLeft="15dp"
                     android:background="#ffffff"
                     android:id="@+id/fbmiraz"/>
 
@@ -144,13 +144,13 @@
             android:layout_height="wrap_content"
             android:layout_weight="1"
             android:orientation="vertical"
-            android:paddingBottom="@dimen/activity_vertical_margin"
-            android:paddingLeft="@dimen/activity_horizontal_margin"
-            android:paddingRight="@dimen/activity_horizontal_margin"
-            android:paddingTop="@dimen/activity_vertical_margin"
+            android:paddingBottom="15dp"
+            android:paddingLeft="15dp"
+            android:paddingRight="15dp"
+            android:paddingTop="15dp"
             android:layout_gravity="center_vertical"
-            android:layout_marginLeft="@dimen/activity_vertical_margin"
-            android:layout_marginRight="@dimen/activity_vertical_margin"
+            android:layout_marginLeft="15dp"
+            android:layout_marginRight="15dp"
             android:gravity="center">
 
             <ImageView
@@ -187,13 +187,13 @@
                     android:layout_height="wrap_content"
                     android:src="@drawable/emailicon"
                     android:background="#ffffff"
-                    android:layout_marginRight="@dimen/activity_vertical_margin"
+                    android:layout_marginRight="15dp"
                     android:id="@+id/emailadi"/>
                 <ImageButton
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:src="@drawable/facbookiconah"
-                    android:layout_marginLeft="@dimen/activity_vertical_margin"
+                    android:layout_marginLeft="15dp"
                     android:background="#ffffff"
                     android:id="@+id/fbadi"/>
 
@@ -213,14 +213,14 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:orientation="vertical"
-            android:paddingBottom="@dimen/activity_vertical_margin"
-            android:paddingLeft="@dimen/activity_horizontal_margin"
-            android:paddingRight="@dimen/activity_horizontal_margin"
-            android:paddingTop="@dimen/activity_vertical_margin"
+            android:paddingBottom="15dp"
+            android:paddingLeft="15dp"
+            android:paddingRight="15dp"
+            android:paddingTop="15dp"
             android:layout_below="@id/layout"
             android:layout_centerHorizontal="true"
-            android:layout_marginLeft="@dimen/activity_vertical_margin"
-            android:layout_marginRight="@dimen/activity_vertical_margin"
+            android:layout_marginLeft="15dp"
+            android:layout_marginRight="15dp"
             android:gravity="center"
             >
             <ImageView
@@ -259,7 +259,7 @@
                     android:id="@+id/emailsari"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:layout_marginRight="@dimen/activity_vertical_margin"
+                    android:layout_marginRight="15dp"
                     android:background="#ffffff"
                     android:src="@drawable/emailicon" />
 
@@ -267,7 +267,7 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:src="@drawable/facbookiconah"
-                    android:layout_marginLeft="@dimen/activity_vertical_margin"
+                    android:layout_marginLeft="15dp"
                     android:background="#ffffff"
                     android:id="@+id/fbsari"/>
 
@@ -316,14 +316,14 @@
                 android:paddingTop="5dp"
 
                 android:orientation="vertical"
-                android:paddingBottom="@dimen/activity_vertical_margin"
-                android:paddingLeft="@dimen/activity_horizontal_margin"
-                android:paddingRight="@dimen/activity_horizontal_margin"
+                android:paddingBottom="15dp"
+                android:paddingLeft="15dp"
+                android:paddingRight="15dp"
 
                 android:layout_below="@id/layout"
 
-                android:layout_marginLeft="@dimen/activity_vertical_margin"
-                android:layout_marginRight="@dimen/activity_vertical_margin"
+                android:layout_marginLeft="15dp"
+                android:layout_marginRight="15dp"
                 android:gravity="center"
                 >
 
@@ -367,7 +367,7 @@
                         android:layout_height="wrap_content"
                         android:src="@drawable/emailicon"
                         android:background="#ffffff"
-                        android:layout_marginRight="@dimen/activity_vertical_margin"
+                        android:layout_marginRight="15dp"
 
                         />
                 </LinearLayout>
@@ -379,14 +379,14 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:orientation="vertical"
-                android:paddingBottom="@dimen/activity_vertical_margin"
-                android:paddingLeft="@dimen/activity_horizontal_margin"
-                android:paddingRight="@dimen/activity_horizontal_margin"
-                android:paddingTop="@dimen/activity_vertical_margin"
+                android:paddingBottom="15dp"
+                android:paddingLeft="15dp"
+                android:paddingRight="15dp"
+                android:paddingTop="15dp"
                 android:layout_below="@id/layout"
                 android:layout_centerHorizontal="true"
-                android:layout_marginLeft="@dimen/activity_vertical_margin"
-                android:layout_marginRight="@dimen/activity_vertical_margin"
+                android:layout_marginLeft="15dp"
+                android:layout_marginRight="15dp"
                 android:gravity="center"
                 >
                 <ImageView
@@ -426,7 +426,7 @@
                         android:layout_height="wrap_content"
                         android:src="@drawable/emailicon"
                         android:background="#ffffff"
-                        android:layout_marginRight="@dimen/activity_vertical_margin"/>
+                        android:layout_marginRight="15dp"/>
 
                 </LinearLayout>
             </LinearLayout>
@@ -437,7 +437,7 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_below="@+id/laylagi"
-            android:layout_marginTop="@dimen/activity_vertical_margin"
+            android:layout_marginTop="15dp"
             android:layout_gravity="center_horizontal"
             android:layout_alignParentLeft="true"
             android:layout_alignParentStart="true"
@@ -456,7 +456,7 @@
                     android:layout_height="50dp"
                     android:src="@drawable/telkom"
 
-                    android:paddingRight="@dimen/activity_vertical_margin"
+                    android:paddingRight="15dp"
                     android:layout_gravity="center_horizontal" />
 
                 <ImageView
@@ -464,20 +464,20 @@
                     android:layout_height="50dp"
                     android:src="@drawable/dif"
 
-                    android:paddingRight="@dimen/activity_vertical_margin"
+                    android:paddingRight="15dp"
                     android:layout_gravity="center_horizontal" />
                 <ImageView
                     android:layout_width="50dp"
                     android:layout_height="50dp"
                     android:src="@drawable/tim"
 
-                    android:paddingRight="@dimen/activity_vertical_margin"
+                    android:paddingRight="15dp"
                     android:layout_gravity="center_horizontal" />
                 <ImageView
                     android:layout_width="50dp"
                     android:layout_height="50dp"
                     android:src="@drawable/logoap"
-                    android:paddingRight="@dimen/activity_horizontal_margin"
+                    android:paddingRight="15dp"
                     android:layout_gravity="center_horizontal"/>
 
             </LinearLayout>
@@ -489,7 +489,7 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_below="@+id/laymaneh"
-            android:layout_marginTop="@dimen/activity_vertical_margin"
+            android:layout_marginTop="15dp"
             android:layout_gravity="center_horizontal"
             android:layout_alignParentLeft="true"
             android:layout_alignParentStart="true"
@@ -519,7 +519,7 @@
                     android:text="@string/fakultas"
                     android:textSize="11dp"
                     android:gravity="center"
-                    android:layout_marginBottom="@dimen/activity_vertical_margin"/>
+                    android:layout_marginBottom="15dp"/>
 
             </LinearLayout>
 
